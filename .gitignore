@@ -1,0 +1,8 @@
+.idea/
+node_modules/
+iobroker.*.tgz
+Thumbs.db
+
+# NYC coverage files
+coverage
+.nyc*
