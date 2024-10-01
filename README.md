@@ -5,7 +5,7 @@ Developer can use internationalisation in backend.
 For that call
 
 ```javascript
-const I18n = require('@iobroker/i18n').I18n;
+const I18n = require('@iobroker/i18n');
 
 // later in "ready" method
 await I18n.init(__dirname, adapter);

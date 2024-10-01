@@ -10,7 +10,8 @@
         "removeComments": false,
         "strict": true,
         "sourceMap": false,
-        "inlineSourceMap": false
+        "inlineSourceMap": false,
+        "types": ["@types/node", "@iobroker/types"]
     },
     "include": ["**/*.ts"],
     "exclude": ["build/**", "node_modules/**"]
