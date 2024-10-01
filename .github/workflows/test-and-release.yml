@@ -80,11 +80,11 @@ jobs:
                   fetch-depth: 0 # Fetch the history, or this action won't work
                   ref: 'master'
 
-            - name: Use Node.js 18
+            - name: Use Node.js 20
               if: steps.automerge.outputs.mergeResult == 'merged'
               uses: actions/setup-node@v4
               with:
-                  node-version: 18
+                  node-version: 20
 
             - name: Determine version
               if: steps.automerge.outputs.mergeResult == 'merged'
