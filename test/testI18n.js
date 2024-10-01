@@ -6,7 +6,7 @@ let I18n;
 describe('i18n', function () {
     this.timeout(3000);
     before(function () {
-        I18n = require('../build/cjs/i18n');
+        I18n = require('../build/cjs');
         initPromise = I18n.init(__dirname, 'de');
     });
     it('translate', function (done) {
