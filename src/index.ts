@@ -58,7 +58,7 @@ export async function init(rootDir: string, languageOrAdapter: ioBroker.Adapter 
                 if (adapter) {
                     adapter.log.warn(
                         'Looks like you use old structure of i18n. ' +
-                        'Please switch to 1i8n/lang.json instead of i18n/lang/translation.json',
+                            'Please switch to 1i8n/lang.json instead of i18n/lang/translation.json',
                     );
                 }
                 const lang: ioBroker.Languages = file as ioBroker.Languages;
