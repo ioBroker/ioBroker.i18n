@@ -57,8 +57,7 @@ And an example of i18n files could be found [here](test/i18n/de.json)
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.2.1 (2024-10-01)
 
 -   (@GermanBluefox) Initial release
 
