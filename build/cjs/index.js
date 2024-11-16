@@ -39,8 +39,15 @@ async function init(rootDir, languageOrAdapter) {
   } else {
     language = languageOrAdapter;
   }
+  rootDir = rootDir.replace(/\\/g, "/");
+  if (rootDir.endsWith("/")) {
+    rootDir = rootDir.substring(0, rootDir.length - 1);
+  }
   let files;
-  if ((0, import_node_fs.existsSync)((0, import_node_path.join)(rootDir, "i18n"))) {
+  if (rootDir.endsWith("/i18n") && (0, import_node_fs.existsSync)(rootDir)) {
+    files = (0, import_node_fs.readdirSync)(rootDir);
+    rootDir = rootDir.substring(0, rootDir.lastIndexOf("/"));
+  } else if ((0, import_node_fs.existsSync)((0, import_node_path.join)(rootDir, "i18n"))) {
     files = (0, import_node_fs.readdirSync)((0, import_node_path.join)(rootDir, "i18n"));
   } else if ((0, import_node_fs.existsSync)((0, import_node_path.join)(rootDir, "lib", "i18n"))) {
     rootDir = (0, import_node_path.join)(rootDir, "lib");

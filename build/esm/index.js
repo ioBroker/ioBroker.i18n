@@ -20,11 +20,24 @@ export async function init(rootDir, languageOrAdapter) {
     else {
         language = languageOrAdapter;
     }
+    rootDir = rootDir.replace(/\\/g, '/');
+    // remove last '/'
+    if (rootDir.endsWith('/')) {
+        rootDir = rootDir.substring(0, rootDir.length - 1);
+    }
     let files;
-    if (existsSync(join(rootDir, 'i18n'))) {
+    if (rootDir.endsWith('/i18n') && existsSync(rootDir)) {
+        // if iobroker.adapter/i18n folder
+        files = readdirSync(rootDir);
+        // make iobroker.adapter
+        rootDir = rootDir.substring(0, rootDir.lastIndexOf('/'));
+    }
+    else if (existsSync(join(rootDir, 'i18n'))) {
+        // if iobroker.adapter folder and in it is i18n
         files = readdirSync(join(rootDir, 'i18n'));
     }
     else if (existsSync(join(rootDir, 'lib', 'i18n'))) {
+        // if iobroker.adapter folder and in it exists lib/i18n
         rootDir = join(rootDir, 'lib');
         files = readdirSync(join(rootDir, 'i18n'));
     }
