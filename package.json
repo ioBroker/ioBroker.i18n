@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ioBroker/adapter-core.git"
+    "url": "git+https://github.com/ioBroker/ioBroker.i18n.git"
   },
   "keywords": [
     "iobroker",
@@ -48,13 +48,13 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ioBroker/adapter-core/issues"
+    "url": "https://github.com/ioBroker/ioBroker.i18n/issues"
   },
   "files": [
     "build",
     "LICENSE"
   ],
-  "homepage": "https://github.com/ioBroker/adapter-core#readme",
+  "homepage": "https://github.com/ioBroker/ioBroker.i18n#readme",
   "devDependencies": {
     "@alcalzone/esm2cjs": "^1.1.2",
     "@alcalzone/release-script": "~3.8.0",

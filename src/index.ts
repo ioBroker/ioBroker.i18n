@@ -1,6 +1,5 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import {brotliCompress} from "node:zlib";
 
 let language: ioBroker.Languages = 'en';
 let words: null | Record<string, ioBroker.Translated> = null;
