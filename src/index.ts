@@ -1,5 +1,6 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import {brotliCompress} from "node:zlib";
 
 let language: ioBroker.Languages = 'en';
 let words: null | Record<string, ioBroker.Translated> = null;
@@ -21,11 +22,23 @@ export async function init(rootDir: string, languageOrAdapter: ioBroker.Adapter 
     } else {
         language = languageOrAdapter;
     }
+    rootDir = rootDir.replace(/\\/g, '/');
+    // remove last '/'
+    if (rootDir.endsWith('/')) {
+        rootDir = rootDir.substring(0, rootDir.length - 1);
+    }
 
     let files: string[];
-    if (existsSync(join(rootDir, 'i18n'))) {
+    if (rootDir.endsWith('/i18n') && existsSync(rootDir)) {
+        // if iobroker.adapter/i18n folder
+        files = readdirSync(rootDir);
+        // make iobroker.adapter
+        rootDir = rootDir.substring(0, rootDir.lastIndexOf('/'));
+    } else if (existsSync(join(rootDir, 'i18n'))) {
+        // if iobroker.adapter folder and in it is i18n
         files = readdirSync(join(rootDir, 'i18n'));
     } else if (existsSync(join(rootDir, 'lib', 'i18n'))) {
+        // if iobroker.adapter folder and in it exists lib/i18n
         rootDir = join(rootDir, 'lib');
         files = readdirSync(join(rootDir, 'i18n'));
     } else {
