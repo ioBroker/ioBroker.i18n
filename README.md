@@ -1,6 +1,6 @@
 # I18n
 
-Developer can use internationalisation in backend.
+Developers can use internationalisation in backend.
 
 For that call
 
@@ -19,6 +19,8 @@ and then in code
 
 ```javascript
 console.log(I18n.translate('text to translate %s', 'argument1'));
+// short form (similar to GUI)
+console.log(I18n.t('text to translate %s', 'argument1'));
 // or to get the ioBroker.Translated object
 console.log(JSON.stringify(I18n.getTranslatedObject('text to translate %s and %s', 'argument1', 'argument2')));
 ```
@@ -57,6 +59,11 @@ And an example of i18n files could be found [here](test/i18n/de.json)
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+-   (@GermanBluefox) Added shorten form of `translate` function `t`
+-   (@GermanBluefox) Allowed usage of patterns in unknown translations too
+
 ### 0.3.1 (2024-11-16)
 
 -   (@GermanBluefox) Support root directory given as '.../i18n'
@@ -67,7 +74,7 @@ And an example of i18n files could be found [here](test/i18n/de.json)
 
 ## MIT License
 
-Copyright (c) 2024 @GermanBluefox <dogafox@gmail.com>
+Copyright (c) 2024-2025 @GermanBluefox <dogafox@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -12,6 +12,8 @@ export declare function init(rootDir: string, languageOrAdapter: ioBroker.Adapte
  * @param args Optional parameters to replace %s
  */
 export declare function translate(key: string, ...args: (string | number | boolean | null)[]): string;
+/** Alias shortcut for translate function */
+export declare const t: typeof translate;
 /**
  * Get translation as ioBroker.Translated object
  *
@@ -23,5 +25,6 @@ declare const _default: {
     init: typeof init;
     translate: typeof translate;
     getTranslatedObject: typeof getTranslatedObject;
+    t: typeof translate;
 };
 export default _default;
