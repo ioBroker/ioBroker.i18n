@@ -1,3 +1,6 @@
+Deprecated: Use `import { I18n } from '@iobroker/adapter-core'` 
+
+
 # I18n
 
 Developers can use internationalisation in backend.
